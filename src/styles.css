@@ -1,4 +1,44 @@
+/* Global styles */
+
+body {
+  /* CSS reset so we don't get margins and paddings that are "baked in" */
+  all: unset;
+  --star-wars-yellow: #f9d71c;
+}
+
 .App {
-  font-family: sans-serif;
-  text-align: center;
+  display: flex;
+  background: black;
+  color: var(--star-wars-yellow);
+}
+
+section {
+  padding: 1rem;
+}
+
+/* Above Tablet size */
+@media (min-width: 768px) {
+  section {
+    height: 100vh;
+  }
+
+  .toc {
+    width: 20vw;
+    border-right: 1px solid var(--star-wars-yellow);
+  }
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  .toc {
+    height: 20vh;
+  }
+
+  .movie-details {
+    height: 100%;
+    border-right: unset;
+    border-top: 1px solid black;
+  }
 }
