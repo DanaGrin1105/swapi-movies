@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
-const getMovies = async () => {
-  const res = await fetch("https://swapi.dev/api/films/");
-  const results = await res?.json();
-  return results;
+const getMovies = () => {
+  return fetch("https://swapi.dev/api/films/").then((results) => {
+     return results.json()
+  });
 };
 
 export default function App() {
@@ -16,9 +16,13 @@ export default function App() {
 
   console.log(data);
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <main className="App">
+      <section className="toc">
+        sidebar / TOC
+      </section>
+      <section className="movie-details">
+        movie details
+      </section>
+    </main>
   );
 }
